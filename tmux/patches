@@ -1,0 +1,2 @@
+CWD regex (replaces $HOME with ~, folds /u/v/w/x/y/z into /u/v/.../y/z)
+    #(echo '#{pane_current_path}' | sed 's#$HOME#~#; s#\\([^/]*/[^/]*/\\).*\\(/[^/]*/.*\\)$#\\1...\\2#')
