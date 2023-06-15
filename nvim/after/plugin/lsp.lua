@@ -10,6 +10,8 @@ lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
     vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
+
+    --TODO: more bindings
 end)
 
 lsp.format_mapping("gq", {
