@@ -22,20 +22,9 @@ return {
             local lsp_zero = require("lsp-zero")
             lsp_zero.preset("recommended")
             lsp_zero.ensure_installed {
-                "rust_analyzer",
-                "lua_ls",
-                "eslint",
-                "pyright",
-                "sqlls",
-                "taplo",
-                "yamlls",
-                "jsonls",
-                "lemminx",
-                "bashls",
-                "clangd",
-                "cmake",
-                "dockerls",
-                "docker_compose_language_service"
+                "rust_analyzer", "lua_ls", "eslint", "pyright", "sqlls",
+                "taplo", "yamlls", "jsonls", "lemminx", "bashls", "clangd",
+                "cmake", "dockerls", "docker_compose_language_service"
             }
 
             lsp_zero.configure("lua_ls", {
