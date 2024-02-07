@@ -38,5 +38,6 @@ return {
             vim.opt.foldenable = false -- autofold on buffer open
         end
     },
+    --TODO: highlighting
     "nvim-treesitter/nvim-treesitter-context"
 }

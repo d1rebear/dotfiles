@@ -2,9 +2,6 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { noremap = false })
 vim.keymap.set("n", "<leader>t", vim.cmd.Ex)
 
---TODO: remove in favor of lsp code actions
--- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
-
 --NOTE: default bind for refresh conflicts with vim-tmux-navigator
 vim.keymap.set("n", "<C-t>", "<Plug>NetrwRefresh", {
     silent = true,
@@ -31,5 +28,5 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- replace all occurences in current buffer (does it's work in somewhat stupid way)
--- TODO: same for visual mode (just adding mode here is not enough)
+--TODO: same for visual mode (just adding mode here is not enough)
 vim.keymap.set({ "n" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
