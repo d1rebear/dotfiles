@@ -1,11 +1,9 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Esc>", ":noh<CR>", { noremap = false })
 vim.keymap.set("n", "<leader>t", vim.cmd.Ex)
--- vim.keymap.set("n", "<leader>tv", vim.cmd.Vex)
--- vim.keymap.set("n", "<leader>ts", vim.cmd.Sex)
 
 --TODO: remove in favor of lsp code actions
-vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
+-- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", { buffer = true })
 
 --NOTE: default bind for refresh conflicts with vim-tmux-navigator
 vim.keymap.set("n", "<C-t>", "<Plug>NetrwRefresh", {
