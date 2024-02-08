@@ -71,6 +71,7 @@ return {
                     preserve_mappings = false
                 }
                 vim.keymap.set('n', "gr", "<cmd>Telescope lsp_references<cr>", { buffer = bufnr })
+                vim.keymap.set('n', "gi", "<cmd>Telescope lsp_implementations<cr>", { buffer = bufnr })
             end)
 
             lsp_zero.format_mapping("<leader>f", {
