@@ -37,3 +37,6 @@ vim.opt.termguicolors = true
 
 -- plugin settings (TODO: move elsewhere)
 vim.g.surround_no_mappings = 1 -- disable defaults
+
+vim.g.netrw_list_hide = "^./$"
+vim.g.netrw_hide = 1
