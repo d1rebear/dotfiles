@@ -14,6 +14,8 @@ return {
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-nvim-lua" },
+            -- -- Inlay hints
+            { "lvimuser/lsp-inlayhints.nvim" },
             -- Snippets
             { "L3MON4D3/LuaSnip" },
             { "rafamadriz/friendly-snippets" },
@@ -31,6 +33,9 @@ return {
                 settings = {
                     Lua = {
                         runtime = { version = "LuaJIT" },
+                        hint = {
+                            enable = true
+                        },
                         diagnostics = {
                             globals = { "vim" }
                         },
@@ -64,7 +69,10 @@ return {
                 }
             }
 
-            lsp_zero.on_attach(function(_, bufnr)
+            local inlay_hints = require("lsp-inlayhints")
+            inlay_hints.setup()
+
+            lsp_zero.on_attach(function(client, bufnr)
                 -- see :help lsp-zero-keybindings
                 lsp_zero.default_keymaps {
                     buffer = bufnr,
@@ -72,6 +80,8 @@ return {
                 }
                 vim.keymap.set('n', "gr", "<cmd>Telescope lsp_references<cr>", { buffer = bufnr })
                 vim.keymap.set('n', "gi", "<cmd>Telescope lsp_implementations<cr>", { buffer = bufnr })
+
+                inlay_hints.on_attach(client, bufnr)
             end)
 
             lsp_zero.format_mapping("<leader>f", {
