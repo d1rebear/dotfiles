@@ -23,7 +23,10 @@ return {
         config = function()
             require("telescope").setup {
                 defaults = {
-                    path_display = { "smart" }
+                    path_display = {
+                        "smart",
+                        truncate = 1
+                    }
                 }
             }
         end,
