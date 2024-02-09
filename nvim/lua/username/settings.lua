@@ -1,4 +1,5 @@
 vim.opt.guicursor = ""
+vim.opt.cursorline = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -8,7 +9,11 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+-- vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 vim.opt.smartindent = true
+vim.opt.breakindent = true
 
 vim.opt.wrap = false
 
@@ -26,7 +31,12 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
+vim.opt.timeoutlen = 300
 
-vim.opt.foldlevel = 20
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.termguicolors = true
+
+vim.g.netrw_list_hide = "^./$"
+vim.g.netrw_hide = 1
+
+-- plugin settings (TODO: move elsewhere)
+vim.g.surround_no_mappings = 1 -- disable defaults
