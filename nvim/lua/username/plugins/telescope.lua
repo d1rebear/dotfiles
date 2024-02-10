@@ -21,11 +21,16 @@ return {
             { "nvim-telescope/telescope-fzf-native.nvim" }
         },
         config = function()
+            local trouble = require("trouble.providers.telescope")
             require("telescope").setup {
                 defaults = {
                     path_display = {
                         "smart",
                         truncate = 1
+                    },
+                    mappings = {
+                        i = { ["<leader>xo"] = trouble.open_with_trouble },
+                        n = { ["<leader>xo"] = trouble.open_with_trouble },
                     }
                 }
             }

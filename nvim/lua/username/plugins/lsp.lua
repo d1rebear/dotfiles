@@ -14,6 +14,10 @@ return {
             { "saadparwaiz1/cmp_luasnip" },
             { "hrsh7th/cmp-nvim-lsp" },
             { "hrsh7th/cmp-nvim-lua" },
+            {
+                'windwp/nvim-autopairs',
+                event = "InsertEnter"
+            },
             -- Inlay hints
             { "lvimuser/lsp-inlayhints.nvim" },
             -- Snippets
@@ -56,6 +60,9 @@ return {
             }
             cmp_mappings["<Tab>"] = nil
             cmp_mappings["<S-Tab>"] = nil
+
+            local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+            cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
             lsp_zero.setup_nvim_cmp { mapping = cmp_mappings }
 
