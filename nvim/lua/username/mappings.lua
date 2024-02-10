@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<Esc>", ":noh<CR>", { noremap = false })
+vim.keymap.set("n", "<Esc>", ":noh<cr>", { noremap = false })
 vim.keymap.set("n", "<leader>t", vim.cmd.Ex)
 
 --NOTE: avoid conflicts between netrw and vim-tmux-navigator
@@ -9,8 +9,8 @@ vim.keymap.set("n", "<C-t>", "<Plug>NetrwRefresh", {
 })
 
 -- move line(s) up and down
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<cr>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<cr>gv=gv")
 
 -- append next line to the end of the current
 vim.keymap.set("n", "J", "mzJ`z")

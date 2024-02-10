@@ -86,8 +86,8 @@ return {
                     buffer = bufnr,
                     preserve_mappings = false
                 }
-                vim.keymap.set('n', "gr", "<cmd>Telescope lsp_references<cr>", { buffer = bufnr })
-                vim.keymap.set('n', "gi", "<cmd>Telescope lsp_implementations<cr>", { buffer = bufnr })
+                vim.keymap.set('n', "gr", ":Telescope lsp_references<cr>", { buffer = bufnr })
+                vim.keymap.set('n', "gi", ":Telescope lsp_implementations<cr>", { buffer = bufnr })
 
                 inlay_hints.on_attach(client, bufnr)
             end)

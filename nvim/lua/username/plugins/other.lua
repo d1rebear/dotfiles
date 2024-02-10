@@ -6,9 +6,15 @@ return {
             vim.g.tmux_navigator_no_wrap = 1
         end
     },
-    "junegunn/gv.vim",
+    {
+        "junegunn/gv.vim",
+        lazy = true,
+        dependencies = { "tpope/vim-fugitive" },
+        keys = {
+            { "<leader>gv", ":GV<cr>"}
+        }
+    },
     "airblade/vim-gitgutter",
-    "smithbm2316/centerpad.nvim",
     {
         "numToStr/Comment.nvim",
         config = function()
@@ -17,8 +23,13 @@ return {
     },
     {
         "norcalli/nvim-colorizer.lua",
+        lazy = true,
         config = function()
             require("colorizer").setup()
-        end
+        end,
+        keys = {
+            { "<leader>col", ":ColorizerAttachToBuffer<cr>", desc = "colorizer attach" },
+            { "<leader>ct", ":ColorizerToggle<cr>", desc = "colorizer toggle" }
+        }
     }
 }

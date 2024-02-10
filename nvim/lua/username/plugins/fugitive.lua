@@ -1,11 +1,11 @@
 return {
     {
         "tpope/vim-fugitive",
-        lazy = false,
+        lazy = true,
         keys = {
             { "<leader>gs", vim.cmd.Git, desc = "fugitive" },
-            { "<leader>gl", "<cmd>diffget //2<CR>", desc = "diff: get left" },
-            { "<leader>gr", "<cmd>diffget //3<CR>", desc = "diff: get right" }
+            { "<leader>gl", ":diffget //2<cr>", desc = "diff: get left" },
+            { "<leader>gr", ":diffget //3<cr>", desc = "diff: get right" }
         }
     }
 }
