@@ -16,7 +16,8 @@ return {
             { "hrsh7th/cmp-nvim-lua" },
             {
                 'windwp/nvim-autopairs',
-                event = "InsertEnter"
+                event = "InsertEnter",
+                opts = {} -- implicitly calls setup
             },
             -- Inlay hints
             { "lvimuser/lsp-inlayhints.nvim" },

@@ -16,11 +16,6 @@ return {
         end
     },
     {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        opts = {} -- implicitly calls setup
-    },
-    {
         "norcalli/nvim-colorizer.lua",
         config = function()
             require("colorizer").setup()
