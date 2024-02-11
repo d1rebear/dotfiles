@@ -8,11 +8,7 @@ return {
     },
     {
         "junegunn/gv.vim",
-        lazy = true,
-        dependencies = { "tpope/vim-fugitive" },
-        keys = {
-            { "<leader>gv", ":GV<cr>"}
-        }
+        dependencies = { "tpope/vim-fugitive" }
     },
     "airblade/vim-gitgutter",
     {
