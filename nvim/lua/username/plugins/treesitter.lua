@@ -43,6 +43,7 @@ return {
         "nvim-treesitter/nvim-treesitter-context",
         lazy = false,
         config = function()
+            vim.cmd("hi TreesitterContextBottom gui=underline guisp=Grey")
             vim.cmd("hi TreesitterContextLineNumberBottom gui=underline guisp=Grey")
         end,
         keys = {
