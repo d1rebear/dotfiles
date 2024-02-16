@@ -9,12 +9,11 @@ end
 return {
     {
         "nvim-telescope/telescope-fzf-native.nvim",
-        lazy = true,
         build = "make"
     },
     {
         "nvim-telescope/telescope.nvim",
-        lazy = true,
+        lazy = false,
         version = "0.1.5",
         dependencies = {
             { "nvim-lua/plenary.nvim" },
