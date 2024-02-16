@@ -4,12 +4,13 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         config = function()
+            ---@diagnostic disable-next-line: missing-fields
             require("nvim-treesitter.configs").setup {
                 -- A list of parser names, or "all" (the five listed parsers should always be installed)
                 ensure_installed = {
                     "comment", "bash", "make", "cmake", "c", "cpp", "lua",
-                    "rust", "java", "python", "scala", "json",
-                    "yaml", "toml", "dockerfile", "sql", "markdown"
+                    "rust", "java", "python", "scala", "json", "yaml",
+                    "toml", "dockerfile", "sql", "markdown", "markdown_inline"
                 },
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)

@@ -9,6 +9,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
+vim.opt.conceallevel = 1
+
 -- vim.opt.splitbelow = true
 vim.opt.splitright = true
 

@@ -23,6 +23,7 @@
   "nvim-lspconfig": { "branch": "master", "commit": "d1bab4cf4b69e49d6058028fd933d8ef5e74e680" },
   "nvim-treesitter": { "branch": "master", "commit": "504fe1043298c468f56a6ef6dc61f35b2d69495a" },
   "nvim-treesitter-context": { "branch": "master", "commit": "e75357fa49ddcdeaf9ba1e60f4582398fed3266b" },
+  "obsidian.nvim": { "branch": "main", "commit": "0a6739d2229c8eb30396db550f3818e092088c27" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "rose-pine": { "branch": "main", "commit": "f977eeba34b030b37f93ece2fbd792477606203b" },
   "rustaceanvim": { "branch": "master", "commit": "4ffd55fe64f7c8dc3c1c7aad252aa0467cbc6480" },
