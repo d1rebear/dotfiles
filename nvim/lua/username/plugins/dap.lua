@@ -2,15 +2,25 @@
 return {
     {
         "mfussenegger/nvim-dap",
+        dependencies = { "mrcjkb/rustaceanvim" },
         config = function()
             local dap = require("dap")
+            local mason_registry = require("mason-registry")
+            local codelldb = mason_registry.get_package("codelldb")
+            local extension_path = codelldb:get_install_path() .. "/extension/"
+            local codelldb_path = extension_path .. "adapter/codelldb"
+            local liblldb_path = extension_path .. "lldb/lib/liblldb.so"
             local port = "13000"
+
             dap.adapters.codelldb = {
                 type = "server",
                 port = port,
                 executable = {
-                    command = "/home/pmolchanov/tools/codelldb/extension/adapter/codelldb",
-                    args = { "--port", port }
+                    command = codelldb_path,
+                    args = {
+                        "--liblldb", liblldb_path,
+                        "--port", port
+                    }
                 }
             }
             dap.configurations.rust = {
@@ -19,11 +29,10 @@ return {
                     type = "codelldb",
                     request = "launch",
                     program = function()
-                        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                        return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. '/', "file")
                     end,
-                    cwd = '${workspaceFolder}',
-                    stopOnEntry = false,
-                    showDisassembly = "never"
+                    cwd = "${workspaceFolder}",
+                    showDisassembly = "never",
                 },
                 {
                     name = "Attach to process",
@@ -31,7 +40,7 @@ return {
                     request = "attach",
                     pid = require("dap.utils").pick_process,
                     args = {},
-                    stopOnEntry = false,
+                    -- cwd = "${workspaceFolder}",
                     showDisassembly = "never"
                 }
             }
