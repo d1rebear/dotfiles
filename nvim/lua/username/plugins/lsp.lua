@@ -6,6 +6,7 @@ local function on_attach(client, bufnr)
     }
     vim.keymap.set({ 'n', 'v' }, "<leader>f", vim.lsp.buf.format, { buffer = bufnr })
     vim.keymap.set('n', "gr", ":Telescope lsp_references<cr>", { buffer = bufnr })
+    vim.keymap.set('n', "gd", ":Telescope lsp_definitions<cr>", { buffer = bufnr })
     vim.keymap.set('n', "gi", ":Telescope lsp_implementations<cr>", { buffer = bufnr })
 
     require("lsp-inlayhints").on_attach(client, bufnr)
